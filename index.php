@@ -19,24 +19,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Cañon Actual<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Usuarios<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Cañones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Estatus</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Calendario</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Salir</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -49,16 +48,46 @@
 		<aside>
 			<nav>
 				<ul>
-					<li>
-						<a href="#">Usuarios</a>
-					</li>
 				</ul>
 			</nav>
 		</aside>
 		<div id="contenedor-principal"></div>
 	</section>
+<div class="table-responsive">
+  <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Edier </td>
+      <td>Cab</td>
+      <td>@ediCab</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Maximiliano</td>
+      <td>Leyva</td>
+      <td>@VelociMax</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Luis</td>
+      <td>Torres</td>
+      <td>@Luisfertg</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 	<footer>
-		<p><i class="fas fa-user-lock"></i>Sistema de Cañones</p>
+		<p align="center"><i class="fas fa-user-lock"></i>Sistema de Cañones</p>
 	</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.10.2/js/all.js" data-auto-replace-svg="nest"></script>
