@@ -1,3 +1,7 @@
+<?php 
+require_once 'includes/funciones.php';
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +55,41 @@
 				</ul>
 			</nav>
 		</aside>
-		<div id="contenedor-principal"></div>
+		<div id="contenedor-principal">
+    <table>
+      <thead>
+        <tr>
+          <th>Matricula</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Correo Electronico</th>
+          <th>Nivel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php 
+
+//Cuando se consulta varios registros se utiliza select
+$usuarios = $db->select("usuarios","*",["AND" =>["usr_status" => 1, "usr_nivel" => 2]);//Falto cierre de corchete[]
+
+//$row = $db->get("usuarios","*",["usr_id" => 6]); Se utiliza get cuando es un solo registro exclusivo.
+foreach ($usuarios as $usuario => $row) {
+ ?>
+        <tr>
+          <td><?php echo $row['usr_matricula']; ?></td>
+          <td><?php echo $row['usr_nombre']; ?></td>
+          <td><?php echo $row['usr_telefono']; ?></td>
+          <td><?php echo $row['usr_correo']; ?></td>
+          <td><?php echo $row['usr_nivel']; ?></td>
+        </tr>
+        <?php
+
+        }
+
+        ?>
+      </tbody>
+    </table>
+    </div>
 	</section>
 <div class="table-responsive">
   <table class="table table-sm">
