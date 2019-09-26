@@ -2,6 +2,13 @@
 require_once 'includes/funciones.php';
  ?>
 
+ <!--
+
+Si la session no existe, entonces mostrar la pagina
+Si la session no existe, redireccionar al login.
+
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +77,7 @@ require_once 'includes/funciones.php';
         <?php 
 
 //Cuando se consulta varios registros se utiliza select
-$usuarios = $db->select("usuarios","*",["AND" =>["usr_status" => 1, "usr_nivel" => 2]);//Falto cierre de corchete[]
+$usuarios = $db->select("usuarios","*",["AND" =>["usr_status" => 1, "usr_nivel" => 2]]);
 
 //$row = $db->get("usuarios","*",["usr_id" => 6]); Se utiliza get cuando es un solo registro exclusivo.
 foreach ($usuarios as $usuario => $row) {
@@ -91,7 +98,7 @@ foreach ($usuarios as $usuario => $row) {
     </table>
     </div>
 	</section>
-<div class="table-responsive">
+<!--<div class="table-responsive">
   <table class="table table-sm">
   <thead>
     <tr>
@@ -123,7 +130,7 @@ foreach ($usuarios as $usuario => $row) {
   </tbody>
 </table>
 </div>
-
+-->
 	<footer>
 		<p align="center"><i class="fas fa-user-lock"></i>Sistema de Cañones</p>
 	</footer>

@@ -2,15 +2,17 @@
 // Using Medoo namespace
 use Medoo\Medoo;
  
-$server = ($_SERVER['HTTP_HOST'] == "localhost") ? "localhost" : "localhost" ;
+$server = ($_SERVER['HTTP_HOST'] == "smoothoperators.com.mx") ? "smoothoperators.com.mx" : "smoothoperators.com.mx" ;
 
 // Initialize
 $db = new Medoo([
     'database_type' => 'mysql',
-    'database_name' => 'name', //nombre de la base de datos
+    'database_name' => 'proyecto-desarrollo', //nombre de la base de datos
     'server' => $server,
-    'username' => 'your_username', //nombre de usuario
-    'password' => 'your_password'  //contraseña
+    'username' => 'remote', //nombre de usuario
+    'password' => 'D7AC3D58A7318'  //contraseña
 ]);
 
+
+}
  ?>
