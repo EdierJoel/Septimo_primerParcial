@@ -11,7 +11,7 @@ $("form").find("input").map(function(i, e){
       	obj[$(this).prop("name")] = $(this).prop("checked");
       }
 	});
-
+      //console.log(obj);
 		$.post("includes/funciones.php", obj, function(respuesta){
 			//alert(respuesta.texto);
 			//Si el estatus es 0 enviar mensajes de datos incorrectos, intente de nuevo

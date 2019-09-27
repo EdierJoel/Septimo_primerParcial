@@ -1,10 +1,11 @@
 <?php 
 require_once 'includes/funciones.php';
+require_once 'includes/db.php';
  ?>
 
  <!--
 
-Si la session no existe, entonces mostrar la pagina
+Si la session existe, entonces mostrar la pagina
 Si la session no existe, redireccionar al login.
 
  -->
@@ -55,14 +56,7 @@ Si la session no existe, redireccionar al login.
     </form>
   </div>
 	</nav>
-	<section>
-		<aside>
-			<nav>
-				<ul>
-				</ul>
-			</nav>
-		</aside>
-		<div id="contenedor-principal">
+		<!--<div id="contenedor-principal">
     <table>
       <thead>
         <tr>
@@ -97,7 +91,7 @@ foreach ($usuarios as $usuario => $row) {
       </tbody>
     </table>
     </div>
-	</section>
+	</section>-->
 <!--<div class="table-responsive">
   <table class="table table-sm">
   <thead>
@@ -131,6 +125,40 @@ foreach ($usuarios as $usuario => $row) {
 </table>
 </div>
 -->
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">STATUS</th>
+  </thead>
+  <tbody>
+      <?php 
+  //cuando se consulta varios registros se utiliza select "*" todos los datos de la tabla y si quiero solo los datos especificos ["id","nombre"]
+  $usuarios = $db->select("canones","*");
+  //  $usuarios = $db->select("usuarios","*",["status" => 1]);
+  //  $usuarios = $db->select("usuarios","*",["AND" =>["status" => 1, "nivel" => 2]]);
+  // 1 es activo
+
+  // solo para un solo uno es get
+  //ejemplo $row =$db->get("usuarios","*",["id" => 6]);
+  //hay que quitar el foreach
+
+  //print_r($usuarios);
+  foreach ($usuarios as $usuario => $row) {
+   ?>
+   <tr>
+      <td><?php echo $row['id']; ?></td>
+      <td><?php echo $row['nombre']; ?></td>
+      <td><?php echo $row['status']; ?></td>
+  </tr>
+          <?php 
+        }
+
+       ?>
+  </tbody>
+</table>
+<div>
 	<footer>
 		<p align="center"><i class="fas fa-user-lock"></i>Sistema de Cañones</p>
 	</footer>

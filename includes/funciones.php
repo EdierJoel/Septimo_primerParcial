@@ -18,11 +18,11 @@ if ($_POST) {
 function login(){
 	global $db;
 	$respuesta = [];
-	$usuario = $db->get("usuarios","*",["correo" => $_POST['usuario']]);
+	$usuario = $db-> count("usuarios","*",["correo" => $_POST['usuario']]);
 	if ($usuario > 0) {
 		$respuesta["texto"] = "Si existe";
 		$respuesta["status"] = 1;
-//VAlidar que la contrasela sea la correcta
+//Validar que la contraseña sea la correcta
 		//Si la contraseña es correcta enviar estatus 0 con el texto que uno desea
 		// Si la contraseña es correcta entonces:
 		//1. Iniciar sesion

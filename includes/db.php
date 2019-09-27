@@ -13,6 +13,4 @@ $db = new Medoo([
     'password' => 'D7AC3D58A7318'  //contraseña
 ]);
 
-
-}
  ?>
