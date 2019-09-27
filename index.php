@@ -134,17 +134,8 @@ foreach ($usuarios as $usuario => $row) {
   </thead>
   <tbody>
       <?php 
-  //cuando se consulta varios registros se utiliza select "*" todos los datos de la tabla y si quiero solo los datos especificos ["id","nombre"]
   $usuarios = $db->select("canones","*");
-  //  $usuarios = $db->select("usuarios","*",["status" => 1]);
-  //  $usuarios = $db->select("usuarios","*",["AND" =>["status" => 1, "nivel" => 2]]);
-  // 1 es activo
 
-  // solo para un solo uno es get
-  //ejemplo $row =$db->get("usuarios","*",["id" => 6]);
-  //hay que quitar el foreach
-
-  //print_r($usuarios);
   foreach ($usuarios as $usuario => $row) {
    ?>
    <tr>
